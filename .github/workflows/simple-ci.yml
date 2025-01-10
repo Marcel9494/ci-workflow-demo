@@ -46,13 +46,23 @@ jobs:
         uses: green-coding-solutions/eco-ci-energy-estimation@v4
         with:
           task: get-measurement
-          label: 'build job measurement' 
+          label: 'build job measurement'
+
+      - name: Show Energy Results Build
+        uses: green-coding-solutions/eco-ci-energy-estimation@v4
+        with:
+          task: display-results
 
   test:
     name: Test Job
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - name: Start Measurement
+        uses: green-coding-solutions/eco-ci-energy-estimation@v4
+        with:
+          task: start-measurement
+          
       - name: Checkout code
         uses: actions/checkout@v3
 
@@ -80,12 +90,22 @@ jobs:
         with:
           task: get-measurement
           label: 'test Job measurement'
+          
+      - name: Show Energy Results Tests
+        uses: green-coding-solutions/eco-ci-energy-estimation@v4
+        with:
+          task: display-results
 
   deploy:
     name: Deploy Job
     runs-on: ubuntu-latest
     needs: test
     steps:
+      - name: Start Measurement
+        uses: green-coding-solutions/eco-ci-energy-estimation@v4
+        with:
+          task: start-measurement
+          
       - name: Checkout code
         uses: actions/checkout@v3
 
@@ -114,7 +134,7 @@ jobs:
           task: get-measurement
           label: 'deploy Job measurement'
 
-      - name: Show Energy Results
+      - name: Show Energy Results Deploy
         uses: green-coding-solutions/eco-ci-energy-estimation@v4
         with:
           task: display-results
