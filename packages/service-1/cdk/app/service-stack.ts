@@ -36,29 +36,5 @@ export class ServiceStack extends Stack {
       environment: {},
     });
     bulkyDemoLambda2.node.addDependency(bulkyDemoLambda1);
-
-    const bulkyDemoLambda3 = new LambdaFunction(this, 'BulkyDemoLambda3', {
-      entry: pathResolve(__dirname, '../../src/lambda-handler/bulky-function-3.ts'),
-      timeout: Duration.seconds(15),
-      memorySize: 128,
-      environment: {},
-    });
-    bulkyDemoLambda3.node.addDependency(bulkyDemoLambda2);
-
-    const bulkyDemoLambda4 = new LambdaFunction(this, 'BulkyDemoLambda4', {
-      entry: pathResolve(__dirname, '../../src/lambda-handler/bulky-function-4.ts'),
-      timeout: Duration.seconds(15),
-      memorySize: 128,
-      environment: {},
-    });
-    bulkyDemoLambda4.node.addDependency(bulkyDemoLambda3);
-
-    const bulkyDemoLambda5 = new LambdaFunction(this, 'BulkyDemoLambda5', {
-      entry: pathResolve(__dirname, '../../src/lambda-handler/bulky-function-5.ts'),
-      timeout: Duration.seconds(15),
-      memorySize: 128,
-      environment: {},
-    });
-    bulkyDemoLambda5.node.addDependency(bulkyDemoLambda4);
   }
 }
