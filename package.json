@@ -5,12 +5,12 @@
   "description": "Basic Project for CI/CD Demo",
   "scripts": {
     "prettier": "prettier . --write",
-    "build": "concurrently \"npm run --prefix ./packages/service-1 build\" \"npm run --prefix ./packages/service-2 build\"  \"npm run --prefix ./packages/service-3 build\"",
-    "lint": "concurrently \"npm run --prefix ./packages/service-1 lint\" \"npm run --prefix ./packages/service-2 lint\"  \"npm run --prefix ./packages/service-3 lint\"",
-    "test": "concurrently \"npm run --prefix ./packages/service-1 test\" \"npm run --prefix ./packages/service-2 test\"  \"npm run --prefix ./packages/service-3 test\"",
-    "test:int": "concurrently \"npm run --prefix ./packages/service-1 test:int\" \"npm run --prefix ./packages/service-2 test:int\"  \"npm run --prefix ./packages/service-3 test:int\"",
-    "test:e2e": "concurrently \"npm run --prefix ./packages/service-1 test:e2e\" \"npm run --prefix ./packages/service-2 test:e2e\"  \"npm run --prefix ./packages/service-3 test:e2e\"",
-    "deploy": "concurrently \"npm run --prefix ./packages/service-1 deploy\" \"npm run --prefix ./packages/service-2 deploy\"  \"npm run --prefix ./packages/service-3 deploy\""
+    "build": "concurrently \"npm run --prefix ./packages/service-1 build\" \"npm run --prefix ./packages/service-2 build\"",
+    "lint": "concurrently \"npm run --prefix ./packages/service-1 lint\" \"npm run --prefix ./packages/service-2 lint\"",
+    "test": "concurrently \"npm run --prefix ./packages/service-1 test\" \"npm run --prefix ./packages/service-2 test\"",
+    "test:int": "concurrently \"npm run --prefix ./packages/service-1 test:int\" \"npm run --prefix ./packages/service-2 test:int\" ",
+    "test:e2e": "concurrently \"npm run --prefix ./packages/service-1 test:e2e\" \"npm run --prefix ./packages/service-2 test:e2e\"",
+    "deploy": "concurrently \"npm run --prefix ./packages/service-1 deploy\" \"npm run --prefix ./packages/service-2 deploy\""
   },
   "workspaces": [
     "packages/*"
